@@ -4,9 +4,12 @@ namespace Builder.Models
 {
     public class Sandwich : IComida
     {
+        public string Masa { get; set; }
+        public string Salsa { get; set; }
         public List<string> Relleno { get; set; }
-        public string Nombre { get; set; }
         public TamañoEnum Tamaño { get; set; }
+        public TipoPanEnum TipoPan { get; set; }
+        public string Nombre { get; set; }
 
         public Sandwich()
         {

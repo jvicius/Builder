@@ -1,30 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Builder.Creator;
 using Builder.Models;
+using System.Collections.Generic;
 
 namespace Builder.Builder.Bagget
 {
-    public class PeperoniBuilder : BaggetBuilder
+    public class PeperoniBuilder : CocinaCreator
     {
         public PeperoniBuilder(TamañoEnum tamaño, TipoPanEnum tipoPan)
         {
-            _bagget = new Models.Baggett(tamaño, tipoPan, new List<string>());
+            _comida = new Models.Baggett(tamaño, tipoPan, new List<string>());
         }
 
         public override void PasoPrepararRelleno()
         {
-            _bagget.Relleno.Add("Jamon");
-            _bagget.Relleno.Add("Peperoni");
-            _bagget.Relleno.Add("Salsa Tomate");
+            _comida.Relleno.Add("Jamon");
+            _comida.Relleno.Add("Peperoni");
+            _comida.Relleno.Add("Salsa Tomate");
         }
 
         public override IComida CrearComida()
         {
             PasoPrepararRelleno();
-            return _bagget;
+            return _comida;
         }
     }
 }

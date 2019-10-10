@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using Builder.Creator;
 using Builder.Models;
 
 namespace Builder.Builder
 {
     // Otro BuilderConcreto
-    public class CuatroQuesosBuilder : PizzaBuilder
+    public class CuatroQuesosBuilder : CocinaCreator
     {
         public CuatroQuesosBuilder(TamañoEnum tamaño)
         {
-            _pizza = new Pizza
+            _comida = new Pizza
             {
                 Tamaño = tamaño,
                 Nombre = "CuatroQuesos",
@@ -17,20 +18,20 @@ namespace Builder.Builder
         }
         public override void PasoPrepararMasa()
         {
-            _pizza.Masa = "Cocido";
+            _comida.Masa = "Cocido";
         }
 
         public override void PasoAñadirSalsa()
         {
-            _pizza.Salsa = "Roquefort";
+            _comida.Salsa = "Roquefort";
         }
 
         public override void PasoPrepararRelleno()
         {
-            _pizza.Relleno.Add("mozzarela");
-            _pizza.Relleno.Add("gorgonzola");
-            _pizza.Relleno.Add("parmesano");
-            _pizza.Relleno.Add("ricotta");
+            _comida.Relleno.Add("mozzarela");
+            _comida.Relleno.Add("gorgonzola");
+            _comida.Relleno.Add("parmesano");
+            _comida.Relleno.Add("ricotta");
         }
 
         public override IComida CrearComida()
@@ -38,7 +39,7 @@ namespace Builder.Builder
             PasoPrepararMasa();
             PasoAñadirSalsa();
             PasoPrepararRelleno();
-            return _pizza;
+            return _comida;
         }
     }
 }

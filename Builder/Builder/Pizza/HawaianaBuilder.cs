@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using Builder.Creator;
 using Builder.Models;
 
 namespace Builder.Builder
 {
     // BuilderConcreto
-    public class HawaianaBuilder : PizzaBuilder
+    public class HawaianaBuilder : CocinaCreator
     {
         public HawaianaBuilder(TamañoEnum tamaño)
         {
-            _pizza = new Pizza
+            _comida = new Pizza
             {
                 Tamaño = tamaño,
                 Nombre = "Hawaiana",
@@ -17,19 +18,19 @@ namespace Builder.Builder
         }
         public override void PasoPrepararMasa()
         {
-            _pizza.Masa = "Suave";
+            _comida.Masa = "Suave";
         }
 
         public override void PasoAñadirSalsa()
         {
-            _pizza.Salsa = "Dulce";
+            _comida.Salsa = "Dulce";
         }
 
         public override void PasoPrepararRelleno()
         {
-            _pizza.Relleno.Add("piña");
-            _pizza.Relleno.Add("tomate");
-            _pizza.Relleno.Add("jamón");
+            _comida.Relleno.Add("piña");
+            _comida.Relleno.Add("tomate");
+            _comida.Relleno.Add("jamón");
         }
 
         public override IComida CrearComida()
@@ -37,7 +38,7 @@ namespace Builder.Builder
             PasoPrepararMasa();
             PasoAñadirSalsa();
             PasoPrepararRelleno();
-            return _pizza;
+            return _comida;
         }
     }
 }

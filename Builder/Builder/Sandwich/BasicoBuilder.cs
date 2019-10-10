@@ -1,30 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Builder.Creator;
 using Builder.Models;
+using System.Collections.Generic;
 
 namespace Builder.Builder.Sandwich
 {
-    public class BasicoBuilder : SandwichBuilder
+    public class BasicoBuilder : CocinaCreator
     {
         public BasicoBuilder(TamañoEnum tamaño)
         {
-            _sandwich = new Models.Sandwich(tamaño, new List<string>());
+            _comida = new Models.Sandwich(tamaño, new List<string>());
         }
 
         public override void PasoPrepararRelleno()
         {
-            _sandwich.Relleno.Add("Queso Amarillo");
-            _sandwich.Relleno.Add("Mayonesa");
-            _sandwich.Relleno.Add("Jamon");
+            _comida.Relleno.Add("Queso Amarillo");
+            _comida.Relleno.Add("Mayonesa");
+            _comida.Relleno.Add("Jamon");
         }
 
         public override IComida CrearComida()
         {
             PasoPrepararRelleno();
-            return _sandwich;
+            return _comida;
         }
     }
 }

@@ -43,15 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder\Bagget\BaggetBuilder.cs" />
     <Compile Include="Builder\Bagget\PeperoniBuilder.cs" />
     <Compile Include="Builder\Pizza\CuatroQuesosBuilder.cs" />
     <Compile Include="Builder\Pizza\HawaianaBuilder.cs" />
-    <Compile Include="Builder\Pizza\PizzaBuilder.cs" />
     <Compile Include="Builder\Sandwich\BasicoBuilder.cs" />
-    <Compile Include="Builder\Sandwich\SandwichBuilder.cs" />
     <Compile Include="Creator\CocinaCreator.cs" />
-    <Compile Include="Director\Cocina.cs" />
     <Compile Include="Models\Baggett.cs" />
     <Compile Include="Models\IComida.cs" />
     <Compile Include="Models\Pizza.cs" />
