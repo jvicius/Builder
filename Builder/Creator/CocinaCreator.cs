@@ -7,8 +7,6 @@ namespace Builder.Creator
         protected IComida _comida;
 
         public string Tamaño { get; set; }
-
-        public IComida ObtenerComida() { return _comida; }
         
         public virtual void PasoPrepararMasa()
         {
