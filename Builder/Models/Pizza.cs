@@ -3,7 +3,7 @@
 namespace Builder.Models
 {
     // Producto final
-    public class Pizza
+    public class Pizza : IComida
     {
         public string Masa { get; set; }
         public string Salsa { get; set; }

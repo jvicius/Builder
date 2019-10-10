@@ -1,16 +1,17 @@
-﻿using Builder.Models;
+﻿using Builder.Creator;
+using Builder.Models;
 
 namespace Builder.Builder
 {
     // Builder
-    public abstract class PizzaBuilder
+    public abstract class PizzaBuilder : CocinaCreator
     {
         // Protected para que las clases que implementen puedan acceder
         protected Pizza _pizza;
 
         public string Tamaño { get; set; }
 
-        public Pizza ObtenerPizza() { return _pizza; }
+        public IComida ObtenerComida() { return _pizza; }
 
         // Un paso para cada una de las propiedades
         public virtual void PasoPrepararMasa()

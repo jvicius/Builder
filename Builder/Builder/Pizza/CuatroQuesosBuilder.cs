@@ -32,5 +32,13 @@ namespace Builder.Builder
             _pizza.Relleno.Add("parmesano");
             _pizza.Relleno.Add("ricotta");
         }
+
+        public override IComida CrearComida()
+        {
+            PasoPrepararMasa();
+            PasoAñadirSalsa();
+            PasoPrepararRelleno();
+            return _pizza;
+        }
     }
 }
