@@ -10,5 +10,7 @@ namespace Builder.Models
         TamañoEnum Tamaño { get; set; }
         TipoPanEnum TipoPan { get; set; }
         string Nombre { get; set; }
+
+        string ToString();
     }
 }
